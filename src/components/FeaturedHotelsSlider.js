@@ -9,7 +9,7 @@ function FeaturedHotelsSlider() {
     {
       id: 1,
       name: "Four Seasons Hotel Beirut",
-      image: "/hotel-img/4SH.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/4SH.jpg`,
       alt: "Four Seasons Hotel Beirut",
       description:
         "Luxury seafront hotel in Raouché, Beirut — rooftop views & spa.",
@@ -19,7 +19,7 @@ function FeaturedHotelsSlider() {
     {
       id: 2,
       name: "Phoenicia Beirut",
-      image: "/hotel-img/PB.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/PB.jpg`,
       alt: "Phoenicia Hotel Beirut",
       description:
         "Historic 5-star hotel near the Beirut Corniche with classic rooms.",
@@ -29,7 +29,7 @@ function FeaturedHotelsSlider() {
     {
       id: 3,
       name: "Faraya Mountain Lodge",
-      image: "/hotel-img/FL.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/FL.jpg`,
       alt: "Faraya Mountain Hotel",
       description:
         "Cozy mountain hotel near Faraya-Mzaar — perfect for skiing trips.",
@@ -155,7 +155,6 @@ function FeaturedHotelsSlider() {
             />
           ))}
         </div>
-       
       </div>
     </section>
   );

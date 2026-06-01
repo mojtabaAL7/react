@@ -11,7 +11,7 @@ function Hotels() {
       rating: 4.7,
       description:
         "Luxury seafront hotel with rooftop pool, spa and refined dining.",
-      image: "/hotel-img/4SH.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/4SH.jpg`,
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ function Hotels() {
       rating: 4.6,
       description:
         "Historic 5-star hotel near the Corniche with classic charm.",
-      image: "/hotel-img/PB.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/PB.jpg`,
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ function Hotels() {
       location: "Downtown Beirut",
       rating: 4.5,
       description: "Contemporary boutique hotel close to cultural attractions.",
-      image: "/hotel-img/LEG.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/LEG.jpg`,
     },
     {
       id: 4,
@@ -36,7 +36,7 @@ function Hotels() {
       location: "Faraya",
       rating: 4.4,
       description: "Cozy mountain hotel near the ski slopes of Mzaar.",
-      image: "/hotel-img/FL.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/FL.jpg`,
     },
     {
       id: 5,
@@ -45,7 +45,7 @@ function Hotels() {
       rating: 4.6,
       description:
         "Luxury seaside resort with pools, Mediterranean views, and a private beach feel.",
-      image: "/hotel-img/KSH.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/KSH.jpg`,
     },
     {
       id: 6,
@@ -54,7 +54,7 @@ function Hotels() {
       rating: 8.6,
       description:
         "Hilltop spa hotel overlooking Beirut and the Mediterranean, ideal for a quieter retreat.",
-      image: "/hotel-img/ALB.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/ALB.jpg`,
     },
     {
       id: 7,
@@ -63,7 +63,7 @@ function Hotels() {
       rating: 4.4,
       description:
         "Stylish boutique hotel known for playful design, rooftop pool, and strong service.",
-      image: "/hotel-img/TSH.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/TSH.jpg`,
     },
     {
       id: 8,
@@ -72,7 +72,7 @@ function Hotels() {
       rating: 4.3,
       description:
         "Central business-friendly hotel with modern rooms, rooftop pool, and sea views.",
-      image: "/hotel-img/GR.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/GR.jpg`,
     },
     {
       id: 9,
@@ -81,7 +81,7 @@ function Hotels() {
       rating: 4.8,
       description:
         " Beirut	Lively, modern hotel with rooftop pool and a casual urban atmosphere.",
-      image: "/hotel-img/HUG.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/HUG.jpg`,
     },
     {
       id: 10,
@@ -90,7 +90,7 @@ function Hotels() {
       rating: 4.3,
       description:
         " Beirut	Comfortable hotel-apartment style stay close to Pigeon Rocks and the Corniche.",
-      image: "/hotel-img/ARO.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/ARO.jpg`,
     },
     {
       id: 11,
@@ -99,7 +99,7 @@ function Hotels() {
       rating: 4.5,
       description:
         " Beirut	Upscale tower hotel with polished rooms and dramatic sea-facing views.",
-      image: "/hotel-img/LAN.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/LAN.jpg`,
     },
     {
       id: 12,
@@ -108,7 +108,7 @@ function Hotels() {
       rating: 8.6,
       description:
         "Waterfront luxury hotel with spa facilities, sea views, and family-friendly resort features.",
-      image: "/hotel-img/LER.jpg",
+      image: `${process.env.PUBLIC_URL}/hotel-img/LER.jpg`,
     },
   ];
 
@@ -122,14 +122,32 @@ function Hotels() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-7">
         {hotels.map((hotel) => (
-          <div key={hotel.id} className="bg-white p-0 rounded-lg shadow-md text-center transition-all duration-300 border-t-4 border-blue-600 relative overflow-hidden hover:-translate-y-2 hover:shadow-xl hover:border-t-green-500">
-            <img src={hotel.image} alt={hotel.name} className="w-full h-60 object-cover block" />
+          <div
+            key={hotel.id}
+            className="bg-white p-0 rounded-lg shadow-md text-center transition-all duration-300 border-t-4 border-blue-600 relative overflow-hidden hover:-translate-y-2 hover:shadow-xl hover:border-t-green-500"
+          >
+            <img
+              src={hotel.image}
+              alt={hotel.name}
+              className="w-full h-60 object-cover block"
+            />
             <div className="p-5">
-              <h3 className="text-blue-600 m-3 text-xl font-bold">{hotel.name}</h3>
-              <p className="text-green-500 font-bold mb-3 inline-block bg-green-50 px-3 py-1.5 rounded-full text-base">{hotel.location}</p>
-              <p className="text-orange-500 font-bold text-base">★ {hotel.rating}</p>
-              <p className="text-gray-700 leading-relaxed">{hotel.description}</p>
-              <Link to="/booking" className="inline-block px-5 py-2 text-sm bg-blue-600 text-white mt-3 rounded transition-all duration-300 hover:bg-blue-800 hover:-translate-y-0.5 hover:shadow-[0_4px_8px_rgba(0,123,255,0.3)]">
+              <h3 className="text-blue-600 m-3 text-xl font-bold">
+                {hotel.name}
+              </h3>
+              <p className="text-green-500 font-bold mb-3 inline-block bg-green-50 px-3 py-1.5 rounded-full text-base">
+                {hotel.location}
+              </p>
+              <p className="text-orange-500 font-bold text-base">
+                ★ {hotel.rating}
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                {hotel.description}
+              </p>
+              <Link
+                to="/booking"
+                className="inline-block px-5 py-2 text-sm bg-blue-600 text-white mt-3 rounded transition-all duration-300 hover:bg-blue-800 hover:-translate-y-0.5 hover:shadow-[0_4px_8px_rgba(0,123,255,0.3)]"
+              >
                 Book This Hotel
               </Link>
             </div>
@@ -142,7 +160,10 @@ function Hotels() {
         <p className="text-gray-600 text-base mb-6">
           Contact us for personalized recommendations and concierge services.
         </p>
-        <a href="tel:+96171111222" className="inline-block px-7 py-3 text-base font-bold border-none rounded cursor-pointer no-underline transition-all duration-300 bg-green-500 text-white hover:bg-green-600 hover:-translate-y-0.5 hover:shadow-[0_4px_8px_rgba(40,167,69,0.3)]">
+        <a
+          href="tel:+96171111222"
+          className="inline-block px-7 py-3 text-base font-bold border-none rounded cursor-pointer no-underline transition-all duration-300 bg-green-500 text-white hover:bg-green-600 hover:-translate-y-0.5 hover:shadow-[0_4px_8px_rgba(40,167,69,0.3)]"
+        >
           Call Us: +961 71 111 222
         </a>
       </section>
